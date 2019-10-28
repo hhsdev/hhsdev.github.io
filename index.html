@@ -1,1 +1,43 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/137ec69648.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" crossorigin="anonymous"></script>
+  <link type="text/css" rel="stylesheet" href="./css/index.css">
+  <title>New Page</title>
+</head>
+<body>
+  <div id="development-sign">🚧 Site is currently under construction! 🚧</div>
+  <div id="search-bars">
+    <div class="search-bar__wrapper">
+      <input type="text" id="yt-search" class="search-bar">
+      <div class="v-centering-wrapper search-bar__icon-wrapper">
+        <i class="fab fa-youtube search-bar__icon"></i>
+      </div>
+    </div>
+    <div class="search-bar__wrapper">
+      <input type="text" id="gg-search" class="search-bar">
+      <div class="v-centering-wrapper search-bar__icon-wrapper">
+        <i class="fab fa-google search-bar__icon"></i>
+      </div>
+    </div>
+    <div class="search-bar__wrapper">
+      <input type="text" id="ddg-search" class="search-bar">
+      <div class="v-centering-wrapper search-bar__icon-wrapper">
+        <img class="fab fa-google search-bar__icon search-bar__icon--ddg" src="icons/ddg.svg">
+      </div>
+    </div>
+  </div>
+  <div id="to-do">
+    <div id="wrapper">
+      <!-- <button id="add" class="to-do__btn"><span "to-do__btn__icon">+</span></button> -->
+    </div>
+  </div>
+</body>
+<script src="js/search-bars.js"></script>
+<script src="js/to-do.js"></script>
+</html>
