@@ -4,37 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <link type="text/css" rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/137ec69648.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" crossorigin="anonymous"></script>
-  <link type="text/css" rel="stylesheet" href="./css/index.css">
   <title>New Page</title>
 </head>
 <body>
   <div id="development-sign">🚧 Site is currently under construction! 🚧</div>
-  <div id="search-bars">
-    <div class="search-bar__wrapper">
-      <input type="text" id="yt-search" class="search-bar">
-      <div class="v-centering-wrapper search-bar__icon-wrapper">
-        <i class="fab fa-youtube search-bar__icon"></i>
+  <div id="root" class="container-fluid">
+    <div class="row">
+      <div id="search-bars" class="col-5">
+        <div class="search-bar__wrapper">
+          <input type="text" id="yt-search" class="search-bar">
+          <div class="v-centering-wrapper search-bar__icon-wrapper">
+            <i class="fab fa-youtube search-bar__icon"></i>
+          </div>
+        </div>
+        <div class="search-bar__wrapper">
+          <input type="text" id="gg-search" class="search-bar">
+          <div class="v-centering-wrapper search-bar__icon-wrapper">
+            <i class="fab fa-google search-bar__icon"></i>
+          </div>
+        </div>
+        <div class="search-bar__wrapper">
+          <input type="text" id="ddg-search" class="search-bar">
+          <div class="v-centering-wrapper search-bar__icon-wrapper">
+            <img class="fab fa-google search-bar__icon search-bar__icon--ddg" src="icons/ddg.svg">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="search-bar__wrapper">
-      <input type="text" id="gg-search" class="search-bar">
-      <div class="v-centering-wrapper search-bar__icon-wrapper">
-        <i class="fab fa-google search-bar__icon"></i>
+      <div id="to-do" class="col">
+        <div id="text-area"></div>
+        <button id="add-text" class="to-do__btn">
+          <i class="far fa-edit"></i>
+        </button>
       </div>
-    </div>
-    <div class="search-bar__wrapper">
-      <input type="text" id="ddg-search" class="search-bar">
-      <div class="v-centering-wrapper search-bar__icon-wrapper">
-        <img class="fab fa-google search-bar__icon search-bar__icon--ddg" src="icons/ddg.svg">
-      </div>
-    </div>
-  </div>
-  <div id="to-do">
-    <div id="wrapper">
-      <!-- <button id="add" class="to-do__btn"><span "to-do__btn__icon">+</span></button> -->
     </div>
   </div>
 </body>
