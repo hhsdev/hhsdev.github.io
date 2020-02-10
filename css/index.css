@@ -76,7 +76,7 @@ body {
 #text-area {
   text-align: left;
 }
-.to-do__btn {
+.add-text__btn {
   width: 100%;
   height: 2rem;
   line-height: 2rem;
@@ -87,7 +87,7 @@ body {
   font-size: 1.4rem;
 }
 
-.to-do__textarea {
+.add-text__textarea {
   width: 100%;
   height: 150px;
   padding: 4px 8px;
@@ -100,12 +100,12 @@ body {
   scrollbar-width: thin;
   scrollbar-color: white black;
 }
-#add-text:focus {
+#add-text-btn:focus {
   animation: 0.2s turn-opaque forwards;
   outline: none;
 }
 
-#add-text:hover {
+#add-text-btn:hover {
   animation: 0.2s turn-opaque forwards;
 }
 
@@ -145,11 +145,11 @@ body {
 .to-do__textarea-btn--save:focus {
   outline: none;
   box-shadow: 0 0 1px 1px white;
-  animation: turn-opaque-8 0.2s forwards;
+  animation: turn-opaque-1 0.2s forwards;
 }
 
 .to-do__textarea-btn--save:hover {
-  animation: turn-opaque-8 0.2s forwards;
+  animation: turn-opaque-1 0.2s forwards;
 }
 .to-do__textarea-btn--save {
   background: #2e86ab;
@@ -176,8 +176,8 @@ body {
   to {opacity: 0.5; }
 }
 
-@keyframes turn-opaque-8 {
-  to {opacity: 0.8; }
+@keyframes turn-opaque-1 {
+  to {opacity: 1; }
 }
 @keyframes rotate-out {
   to {
