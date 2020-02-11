@@ -1,21 +1,25 @@
-import React from 'react';
-import { Card } from '@material-ui/core';
-import Title from './title';
-import ChipsArray from './chipsArray';
+import React from "react";
+import 'bulma/css/bulma.min.css';
+import { Card, makeStyles } from "@material-ui/core";
+import Title from "./title";
+import ChipsArray from "./chipsArray";
 
-class ShowCaseCard extends React.Component {
-  render() {
-    return (
-      <Card className="showCase margin-2">
-        <img src={this.props.data.img} />
-        <div style={{ padding: '8px' }}>
-          <Title title={this.props.data.title} />
-          <ChipsArray tags={this.props.data.tags} />
-
-        </div>
-      </Card>
-    );
+const useStyle = makeStyles(theme => ({
+  root: {
+    display: 'inline-block',
+    margin: theme.spacing(1)
   }
-}
+}));
 
-export default ShowCaseCard;
+export default function ShowCaseCard(props) {
+  const classes = useStyle();
+  return (
+    <Card style={{ margin: 8}}>
+      <img src={props.data.img} style={{ width: '100%' }}/>
+      <div style={{ padding: "8px" }}>
+        <Title title={props.data.title} />
+        <ChipsArray tags={props.data.tags} />
+      </div>
+    </Card>
+  );
+}
