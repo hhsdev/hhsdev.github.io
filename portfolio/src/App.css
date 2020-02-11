@@ -38,3 +38,47 @@
     transform: rotate(360deg);
   }
 }
+
+#test-card {
+  width: 200px;
+  height: 200px;
+}
+
+.showCase {
+  width: 400px;
+}
+
+.margin-normal {
+  margin: 16px;
+}
+
+.text-size-2 {
+  font-size: 1.2rem;
+}
+
+.text-color-primary {
+  color: #282c34;
+}
+
+.text-font-bold {
+  font-weight: bold;
+}
+
+.margin-xs {
+  margin: 4px;
+}
+
+.margin-2 {
+  margin: 12px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.flex-row > * {
+  margin-right: 8px;
+}
