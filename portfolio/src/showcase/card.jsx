@@ -15,7 +15,7 @@ export default function ShowCaseCard(props) {
   const classes = useStyle();
   return (
     <Card style={{ margin: 8}}>
-      <img src={props.data.img} style={{ width: '100%' }}/>
+      <img src={props.data.thumbnail} style={{ width: '100%' }}/>
       <div style={{ padding: "8px" }}>
         <Title title={props.data.title} />
         <ChipsArray tags={props.data.tags} />

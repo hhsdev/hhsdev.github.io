@@ -7,7 +7,7 @@ import { AppBar, Toolbar, ThemeProvider } from "@material-ui/core";
 const dataArray = [
   {
     title: "TTT: Machine Learning explained with AI",
-    img: "https://dummyimage.com/400x150/333333/dddddd",
+    thumbnail: "https://dummyimage.com/400x150/333333/dddddd",
     tags: [
       { avatar: "javascript.svg", name: "javascript" },
       { avatar: "css3.svg", name: "css" },
@@ -16,7 +16,7 @@ const dataArray = [
   },
   {
     title: "",
-    img: "https://dummyimage.com/400x150/333333/dddddd",
+    thumbnail: "https://dummyimage.com/400x150/333333/dddddd",
     tags: [
       { avatar: "javascript.svg", name: "javascript" },
       { avatar: "css3.svg", name: "css" },
@@ -25,7 +25,7 @@ const dataArray = [
   },
   {
     title: "TTT: Machine Learning explained with AI",
-    img: "https://dummyimage.com/400x150/333333/dddddd",
+    thumbnail: "https://dummyimage.com/400x150/333333/dddddd",
     tags: [
       { avatar: "javascript.svg", name: "javascript" },
       { avatar: "css3.svg", name: "css" },
@@ -34,7 +34,7 @@ const dataArray = [
   },
   {
     title: "TTT: Machine Learning explained with AI",
-    img: "https://dummyimage.com/400x150/333333/dddddd",
+    thumbnail: "https://dummyimage.com/400x150/333333/dddddd",
     tags: [
       { avatar: "javascript.svg", name: "javascript" },
       { avatar: "css3.svg", name: "css" },
