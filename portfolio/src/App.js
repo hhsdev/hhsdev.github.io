@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { appTheme } from "./theme.jsx";
 import ShowCaseContainer from "./showcase/container.jsx";
-import { AppBar, Toolbar, ThemeProvider } from "@material-ui/core";
+import AboutMeContainer from "./aboutme/container.jsx";
 
 const dataArray = [
   {
@@ -40,11 +40,16 @@ const dataArray = [
       { avatar: "css3.svg", name: "css" },
       { avatar: "html5.svg", name: "html" }
     ]
-  },
+  }
 ];
 
 function App() {
-  return <ShowCaseContainer dataArray={dataArray} />
+  return (
+    <div>
+      <AboutMeContainer />
+      <ShowCaseContainer dataArray={dataArray} />
+    </div>
+  );
 }
 
 export default App;

@@ -3,11 +3,14 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    font: 'bold 1.2em Roboto, sans-serif'
+    height: '300px',
+    background: 'red',
   }
 }));
 
-export default function Title(props) {
+export default function AboutMeContainer() {
   const classes = useStyles();
-  return <div className={classes.root}>{props.title}</div>;
+  return (
+    <div className={classes.root}></div>
+  );
 }

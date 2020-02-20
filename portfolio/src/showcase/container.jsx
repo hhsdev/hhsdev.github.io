@@ -15,7 +15,7 @@ export default function ShowCaseContainer(props) {
     <Grid container justify="center">
       <Grid className="columns" container item xs={11} spacing={4}>
         {props.dataArray.map(data => (
-          <Grid xs={12} sm={6} md={4} lg={3}><ShowCaseCard data={data} /> </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3}> <ShowCaseCard data={data} /> </Grid>
         ))}
       </Grid>
     </Grid>
