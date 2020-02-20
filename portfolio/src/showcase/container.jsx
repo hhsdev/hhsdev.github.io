@@ -1,15 +1,23 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import ShowCaseCard from "./card.jsx";
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4)
+  }
+}));
+
 export default function ShowCaseContainer(props) {
+  const classes = useStyles();
   return (
-    <div style={{ padding: 8 }}>
-      <Grid className="columns" container spacing={3} justify="space-around">
+    <Grid container justify="center">
+      <Grid className="columns" container item xs={11} spacing={4}>
         {props.dataArray.map(data => (
-          <Grid xs={10} sm={6} md={4}><ShowCaseCard data={data} /> </Grid>
+          <Grid xs={12} sm={6} md={4} lg={3}><ShowCaseCard data={data} /> </Grid>
         ))}
       </Grid>
-    </div>
+    </Grid>
   );
 }

@@ -14,7 +14,7 @@ const useStyle = makeStyles(theme => ({
 export default function ShowCaseCard(props) {
   const classes = useStyle();
   return (
-    <Card style={{ margin: 8}}>
+    <Card style={{ margin: 8, height: "100%"}}>
       <img src={props.data.thumbnail} style={{ width: '100%' }}/>
       <div style={{ padding: "8px" }}>
         <Title title={props.data.title} />
