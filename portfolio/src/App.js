@@ -7,7 +7,7 @@ import AboutMeContainer from "./aboutme/container.jsx";
 const dataArray = [
   {
     title: "TTT: Machine Learning explained with tic-tac-toe",
-    thumbnail: "https://dummyimage.com/400x150/333333/dddddd",
+    thumbnail: "ttt.jpg",
     tags: [
       { avatar: "js.png", name: "javascript" },
       { avatar: "css3.png", name: "css" },
@@ -17,7 +17,7 @@ const dataArray = [
   },
   {
     title: "Interia-notes: a note taking application, written entirely in C++",
-    thumbnail: "https://dummyimage.com/400x150/333333/dddddd",
+    thumbnail: "ineria-notes.jpg",
     tags: [
       { avatar: "js.png", name: "javascript" },
       { avatar: "css3.png", name: "css" },

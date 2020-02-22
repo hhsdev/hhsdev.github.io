@@ -9,61 +9,79 @@ import {
   CardContent,
   CardMedia,
   makeStyles,
+  withStyles
 } from "@material-ui/core";
 
 const useStyle = makeStyles(theme => ({
   root: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(1)
   },
   media: {
-    height: 140
+    minHeight: 140
   }
 }));
 
-export default function ShowCaseCard(props) {
-  const classes = useStyle();
-  const [state, setState] = useState({
-    facingFront: true
-  });
-  let capturedDiv = null;
-  let isStartOfFlip = null;
-  const startFlip = e => {
+const styles = theme => ({
+  root: {
+    margin: theme.spacing(1)
+  },
+  media: {
+    minHeight: 140
+  }
+});
+
+class ShowCaseCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      facingFront: true
+    };
+  }
+
+  startFlip(e) {
     const card = e.currentTarget;
     card.style.animation = "kf-flip-first-half 0.2s ease forwards";
-    isStartOfFlip = true;
-  };
+    card.style.height = card.clientHeight + 'px';
+    this.inFirstHalfOfFlipping = true;
+  }
 
-  const midFlip = e => {
+  midFlip(e) {
     const card = e.currentTarget;
-    if (isStartOfFlip) {
-      setState({ ...state, facingFront: !state.facingFront });
+    if (this.inFirstHalfOfFlipping) {
+      this.setState({ facingFront: !this.state.facingFront });
       card.style.animation = "kf-flip-second-half 0.2s ease forwards";
     } else {
       card.style.animation = "";
     }
-    isStartOfFlip = false;
-  };
+    this.inFirstHalfOfFlipping = false;
+  }
 
-  const frontContents = (
-    <CardActionArea ref={ div => capturedDiv = div }>
-      <CardMedia
-        className={classes.media}
-        image={props.data.thumbnail}
-      />
-      <CardContent>
-        <Title title={props.data.title} />
-        <ChipsArray tags={props.data.tags} />
-      </CardContent>
-    </CardActionArea>
-  );
+  render() {
+    const { data, classes } = this.props;
+    const frontContents = (
+      <CardActionArea ref={div => this.div = div }>
+        <CardMedia className={classes.media} image={data.thumbnail} />
+        <CardContent>
+          <Title title={data.title} />
+          <ChipsArray tags={data.tags} />
+        </CardContent>
+      </CardActionArea>
+    );
 
-  const backContents = (
-    <p style={{ padding: "8px" }}>{props.data.description}</p>
-  );
-  const card = (
-    <Card className={classes.root} onClick={startFlip} onAnimationEnd={midFlip}>
-      {state.facingFront ? frontContents : backContents}
-    </Card>
-  );
-  return card;
+    const backContents = (
+      <p style={{ padding: "8px" }}>{data.description}</p>
+    );
+    const card = (
+      <Card
+        className={classes.root}
+        onClick={(e) => this.startFlip(e)}
+        onAnimationEnd={(e) => this.midFlip(e)}
+      >
+        {this.state.facingFront ? frontContents : backContents}
+      </Card>
+    );
+    return card;
+  }
 }
+
+export default withStyles(styles)(ShowCaseCard);

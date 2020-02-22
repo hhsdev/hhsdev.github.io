@@ -7,8 +7,6 @@ const styles = {
   root: {
     display: 'flex',
     justifyContent: 'center',
-    height: window.innerHeight,
-    background: '#474350',
   }
 };
 
@@ -26,12 +24,12 @@ class AboutMeContainer extends React.Component {
   }
 
   updateHeight() {
-    this.setState({height: this.div.clientHeight});
+    this.setState({height: window.innerHeight });
   }
 
   render() {
     return (
-      <div className={this.props.classes.root} ref={div => this.div = div} onChange={this.updateHeight}>
+      <div className={this.props.classes.root} ref={div => this.div = div} style={{ height: this.state.height }}>
         <AboutMeBackground height={this.state.height} />
         <AboutMeDescContainer />
       </div>
