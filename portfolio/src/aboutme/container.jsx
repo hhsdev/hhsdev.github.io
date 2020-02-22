@@ -1,9 +1,13 @@
 import React from "react";
 import { withStyles } from "@material-ui/core";
 import AboutMeBackground from './background.jsx';
+import AboutMeDescContainer from './descContainer.jsx';
+
 const styles = {
   root: {
-    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    height: window.innerHeight,
     background: '#474350',
   }
 };
@@ -28,7 +32,8 @@ class AboutMeContainer extends React.Component {
   render() {
     return (
       <div className={this.props.classes.root} ref={div => this.div = div} onChange={this.updateHeight}>
-        <AboutMeBackground height={this.state.height}/>
+        <AboutMeBackground height={this.state.height} />
+        <AboutMeDescContainer />
       </div>
     )
   }

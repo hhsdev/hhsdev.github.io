@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import "bulma/css/bulma.min.css";
 import "../animation.css";
-
-import { Card, makeStyles, FilledInput } from "@material-ui/core";
 import Title from "./title";
 import ChipsArray from "./chipsArray";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  makeStyles,
+} from "@material-ui/core";
 
 const useStyle = makeStyles(theme => ({
   root: {
-    display: "inline-block",
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
+  },
+  media: {
+    height: 140
   }
 }));
 
@@ -18,19 +25,19 @@ export default function ShowCaseCard(props) {
   const [state, setState] = useState({
     facingFront: true
   });
+  let capturedDiv = null;
   let isStartOfFlip = null;
   const startFlip = e => {
     const card = e.currentTarget;
-    card.style.animation = "kf-flip-first-half 0.12s ease forwards";
+    card.style.animation = "kf-flip-first-half 0.2s ease forwards";
     isStartOfFlip = true;
   };
 
   const midFlip = e => {
     const card = e.currentTarget;
-    console.log(card.style.border);
     if (isStartOfFlip) {
-      setState({ ...state, facingFront: !state.facingFront})
-      card.style.animation = "kf-flip-second-half 0.12s ease forwards";
+      setState({ ...state, facingFront: !state.facingFront });
+      card.style.animation = "kf-flip-second-half 0.2s ease forwards";
     } else {
       card.style.animation = "";
     }
@@ -38,30 +45,24 @@ export default function ShowCaseCard(props) {
   };
 
   const frontContents = (
-    <div>
-      <img
-        src={props.data.thumbnail}
-        style={{ width: "100%", maxHeight: "200px" }}
+    <CardActionArea ref={ div => capturedDiv = div }>
+      <CardMedia
+        className={classes.media}
+        image={props.data.thumbnail}
       />
-      <div style={{ padding: "8px" }}>
+      <CardContent>
         <Title title={props.data.title} />
         <ChipsArray tags={props.data.tags} />
-      </div>
-    </div>
+      </CardContent>
+    </CardActionArea>
   );
 
   const backContents = (
-    <p style={{ padding: '8px' }}>
-      {props.data.description}
-    </p>
-  )
+    <p style={{ padding: "8px" }}>{props.data.description}</p>
+  );
   const card = (
-    <Card
-      style={{ margin: 8, height: "100%" }}
-      onClick={startFlip}
-      onAnimationEnd={midFlip}
-    >
-      {state.facingFront ? frontContents : backContents }
+    <Card className={classes.root} onClick={startFlip} onAnimationEnd={midFlip}>
+      {state.facingFront ? frontContents : backContents}
     </Card>
   );
   return card;

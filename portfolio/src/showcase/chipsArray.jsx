@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "start",
     flexWrap: "wrap",
     "& > *": {
-      margin: theme.spacing(0.5)
+      marginTop: theme.spacing(0.5)
     }
   }
 }));
@@ -24,6 +24,6 @@ const handleClick = event => {};
 
 const renderTags = (tags, handler) => {
   return tags.map((tag, index) => {
-    return <Tag key={index} avatar={tag.avatar} name={tag.name} onClick={handler} />
+    return <Tag key={index} avatar={tag.avatar} name={tag.name} />
   });
 };
