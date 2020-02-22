@@ -1,16 +1,37 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles(theme => ({
+import { withStyles } from "@material-ui/core";
+import AboutMeBackground from './background.jsx';
+const styles = {
   root: {
-    height: '300px',
-    background: 'red',
+    height: '100vh',
+    background: '#474350',
   }
-}));
+};
 
-export default function AboutMeContainer() {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}></div>
-  );
+class AboutMeContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      height: 0
+    };
+  }
+
+  componentDidMount() {
+    this.updateHeight();
+    window.addEventListener('resize', () => this.updateHeight());
+  }
+
+  updateHeight() {
+    this.setState({height: this.div.clientHeight});
+  }
+
+  render() {
+    return (
+      <div className={this.props.classes.root} ref={div => this.div = div} onChange={this.updateHeight}>
+        <AboutMeBackground height={this.state.height}/>
+      </div>
+    )
+  }
 }
+
+export default withStyles(styles)(AboutMeContainer);

@@ -23,7 +23,7 @@ export default function ChipsArray(props) {
 const handleClick = event => {};
 
 const renderTags = (tags, handler) => {
-  return tags.map(tag => {
-    return <Tag avatar={tag.avatar} name={tag.name} onClick={handler} />
+  return tags.map((tag, index) => {
+    return <Tag key={index} avatar={tag.avatar} name={tag.name} onClick={handler} />
   });
 };
